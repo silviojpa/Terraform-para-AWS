@@ -34,4 +34,10 @@ Para usar qualquer um dos exemplos, siga estes passos:
 
 Sinta-se à vontade para explorar os exemplos, sugerir melhorias ou adicionar novos projetos. Qualquer contribuição é bem-vinda!
 
+1. Segurança: Você pode adicionar o arquivo terraform.tfvars ao seu .gitignore. Assim, seu código (main.tf) pode ser compartilhado sem expor suas senhas.
+
+- Flexibilidade: Se precisar mudar de região ou de conta, você altera apenas um arquivo.
+
+- Dica de Ouro: A forma mais segura recomendada pela AWS é não colocar as chaves no código, mas sim rodar o comando aws configure no seu terminal. O Terraform é inteligente o suficiente para ler as credenciais diretamente da sua máquina sem você precisar escrever access_key no arquivo .tf
+
 ---
