@@ -34,6 +34,38 @@ Para usar qualquer um dos exemplos, siga estes passos:
 
 Sinta-se à vontade para explorar os exemplos, sugerir melhorias ou adicionar novos projetos. Qualquer contribuição é bem-vinda!
 
+Arquivo: `terraform.tfvars` (Onde ficam os valores)
+Crie este arquivo na mesma pasta. O Terraform lê ele automaticamente. Não envie este arquivo para o GitHub.
+
+```Terraform
+aws_access_key = "SUA_ACCESS_KEY_AQUI"
+aws_secret_key = "SUA_SECRET_KEY_AQUI"
+```
+Arquivo: `main.tf` (Atualizado)
+No topo do seu `main.tf`, chame as variáveis:
+
+````Terraform
+provider "aws" {
+  region     = "us-east-1"
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
+}
+````
+3. Como criar a Chave no Console AWS
+Para conseguir esses valores acima, siga este caminho no console:
+
+- Busque por IAM na barra de pesquisa.
+
+- Vá em Usuários e clique no seu nome de usuário.
+
+- Clique na aba Credenciais de segurança.
+
+- Desça até Chaves de acesso e clique em Criar chave de acesso.
+
+- Selecione CLI (Interface da Linha de Comando), marque a caixa de confirmação e avance.
+
+- Copie o Access Key e o Secret Key para o seu arquivo terraform.tfvars.
+
 1. Segurança: Você pode adicionar o arquivo terraform.tfvars ao seu .gitignore. Assim, seu código (main.tf) pode ser compartilhado sem expor suas senhas.
 
 - Flexibilidade: Se precisar mudar de região ou de conta, você altera apenas um arquivo.
