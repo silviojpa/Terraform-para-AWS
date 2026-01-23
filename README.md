@@ -30,7 +30,7 @@ Para usar qualquer um dos exemplos, siga estes passos:
 3.  **Para Destruir a Infraestrutura**:
     * Quando não precisar mais dos recursos, você pode destruí-los para evitar custos: `terraform destroy`.
 
-## Dicaa
+## Dica
 
 Arquivo: `terraform.tfvars` (Onde ficam os valores)
 Crie este arquivo na mesma pasta. O Terraform lê ele automaticamente. Não envie este arquivo para o GitHub.
