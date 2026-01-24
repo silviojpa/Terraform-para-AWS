@@ -30,8 +30,21 @@ Para usar qualquer um dos exemplos, siga estes passos:
 3.  **Para Destruir a Infraestrutura**:
     * Quando não precisar mais dos recursos, você pode destruí-los para evitar custos: `terraform destroy`.
 
-## Dica
+## Dica - Somente para teste.
+Ideial é criar uma role na provide e anexar ARN 
+````
+variable "assume_role" {
+  type = object({
+    arn    = string
+    region = string
+  })
 
+  default = {
+    arn    = "arn:aws:iam::654654554686:role/dvn-workshop-jan-role"
+    region = "us-east-1"
+  }
+}
+````
 Arquivo: `terraform.tfvars` (Onde ficam os valores)
 Crie este arquivo na mesma pasta. O Terraform lê ele automaticamente. Não envie este arquivo para o GitHub.
 
